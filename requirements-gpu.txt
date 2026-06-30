@@ -1,0 +1,23 @@
+# GPU / model deps for the local IndicConformer-600M adapter.
+# Target: NVIDIA RTX 3050 Ti Laptop (4GB) → FP32 ONNX inference via CUDAExecutionProvider.
+# IndicConformer is an ONNX model — torch .half() is a no-op. See ADR-0011.
+#
+# IMPORTANT: torch must be the CUDA build. Install it from the PyTorch CUDA channel with
+# --index-url (NOT --extra-index-url, or pip will silently pull the CPU build from PyPI):
+#
+#   pip install torch==2.12.1 torchaudio --index-url https://download.pytorch.org/whl/cu130
+#
+# This box: driver 591.44 → CUDA 13.1, and the cu130 channel carries torch 2.12.1 for
+# win/py311. On other machines pick the cuXXX channel matching your driver (nvidia-smi
+# shows the max CUDA); cu128/cu126 top out at torch 2.9.x.
+# torch/torchaudio are intentionally NOT pinned below — install them via the command
+# above so they come from the CUDA channel, then install the rest of this file normally.
+
+# torch==2.12.1        # via --index-url cu130 (see above), not from PyPI
+# torchaudio           # via --index-url cu130 (see above)
+
+# IndicConformer is loaded via trust_remote_code through transformers.
+transformers>=4.40
+
+# onnxruntime-gpu is only needed if the Milestone-0 logit spike uses the ONNX path.
+onnxruntime-gpu>=1.17

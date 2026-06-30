@@ -1,0 +1,48 @@
+# Core deps — CPU-installable. GPU/model deps live in requirements-gpu.txt.
+# Install:  pip install -r requirements.txt
+
+# value types / config
+pydantic>=2.6
+python-dotenv>=1.0
+
+# numerics / data / charts
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.7        # benchmark/visualize.py figures
+
+# audio decode + resample (the single normalization path)
+soundfile>=0.12
+librosa>=0.10
+
+# metrics
+jiwer>=3.0
+# meeteval — OPTIONAL (run.py --tcpwer only). Builds a C++ extension; needs a working
+# MSVC + Windows SDK toolchain. metrics.tcpwer() returns None gracefully if it's absent.
+# Install when needed:  pip install meeteval
+
+# Method B beam search (used only if Milestone-0 spike == GO)
+pyctcdecode>=0.5
+# KenLM is OPTIONAL and not on PyPI as a wheel for all platforms; install separately:
+#   pip install https://github.com/kpu/kenlm/archive/master.zip
+
+# Indic script normalization (optional but recommended for fair code-mixed WER)
+indic-nlp-library>=0.92
+
+# API adapters
+httpx>=0.27
+sarvamai>=0.1            # Sarvam offline STT (falls back to REST if absent)
+
+# LLM corrector (Method A) — Anthropic default, OpenAI optional alternative
+anthropic>=0.40
+openai>=1.40
+
+# optional demo app (app/)
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+
+# recording test clips (data/record_clip.py) — optional; bundles PortAudio on Windows
+sounddevice>=0.4
+
+# tests
+pytest>=8.0

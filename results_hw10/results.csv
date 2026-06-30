@@ -1,0 +1,4 @@
+system,condition,wer,cer,term_recall,term_recall_fuzzy,term_cer,false_insertion,mean_latency_ms,mean_rtf,n_clips
+indicconformer,+pyctc,0.133,0.038,0.885,0.966,0.033,0.000,432.4,0.051,50
+indicconformer,raw,0.113,0.031,0.695,0.901,0.081,0.000,282.6,0.035,50
+indicconformer,raw-ctc,0.137,0.039,0.672,0.844,0.105,0.000,63.1,0.008,50

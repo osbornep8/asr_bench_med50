@@ -1,0 +1,12 @@
+system,condition,wer,cer,term_recall,term_recall_fuzzy,term_cer,false_insertion,mean_latency_ms,mean_rtf,n_clips
+gnani,+llmcorrect,0.104,0.037,0.958,0.958,0.029,0.000,2448.2,0.305,50
+gnani,raw,0.125,0.041,0.779,0.883,0.066,0.000,670.0,0.083,50
+indicconformer,+llmcorrect,0.099,0.029,0.911,0.927,0.054,0.000,2324.9,0.287,50
+indicconformer,+pyctc,0.133,0.038,0.885,0.966,0.033,0.000,335.2,0.039,50
+indicconformer,+pyctc+llmcorrect,0.112,0.035,0.945,0.961,0.032,0.000,2159.2,0.269,50
+indicconformer,raw,0.113,0.031,0.695,0.901,0.081,0.000,544.5,0.068,50
+indicconformer,raw-ctc,0.137,0.039,0.672,0.844,0.105,0.000,365.7,0.046,50
+sarvam,+llmcorrect,0.071,0.021,0.943,0.958,0.033,0.000,2757.0,0.345,50
+sarvam,raw,0.105,0.027,0.701,0.927,0.064,0.000,1066.9,0.134,50
+smallest,+llmcorrect,0.072,0.019,1.000,1.000,0.000,0.000,2134.6,0.279,25
+smallest,raw,0.115,0.033,0.656,0.870,0.081,0.000,416.9,0.054,25

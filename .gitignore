@@ -1,0 +1,33 @@
+# secrets / config
+.env
+
+# local model weights (multi-GB) — keep README only
+models/*
+!models/.gitkeep
+!models/README.md
+
+# benchmark outputs: share AGGREGATE metrics + figures only (results.csv / results.md /
+# results/figures/). WITHHOLD the per-clip transcripts, cells, and the manifest — they
+# carry the verbatim content of the private recordings.
+data/manifest.jsonl
+transcripts.md
+cells.csv
+
+# real/consented audio — never commit; folder shown but empty (ADR-0022)
+data/clips/*
+!data/clips/.gitkeep
+
+# stray run logs
+*.log
+
+# visualization script (internal tooling; figures committed, script excluded)
+benchmark/visualize.py
+
+# article draft (local only; published separately)
+article/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

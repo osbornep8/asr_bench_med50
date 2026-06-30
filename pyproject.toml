@@ -1,0 +1,17 @@
+[project]
+name = "asr-bench"
+version = "0.1.0"
+description = "Offline ASR contextual-biasing benchmark: IndicConformer-600M vs Sarvam/Smallest/Cartesia/Gnani"
+requires-python = ">=3.10"
+
+# Runtime deps are split across requirements.txt (core, CPU-installable) and
+# requirements-gpu.txt (torch CUDA build, onnxruntime-gpu). See README.
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::UserWarning"]
+
+[tool.ruff]
+line-length = 100
